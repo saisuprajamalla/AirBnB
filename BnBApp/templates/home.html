@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AirBnB Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body style="background: #43A047">
+<div class="login-page">
+    <div class="form">
+        <h1>AirBNB Price Prediction</h1>
+        <div style="color:red;"> {{ msg }} </div>
+        <form action="/" method="POST">
+            <fieldset>
+            {{ form.csrf_token }}
+                {{ form.neighbourhood(class_="dropdown")}}
+            {{ form.guests(placeholder="guests") }}
+            {{ form.bathrooms(placeholder="bathrooms") }}
+            {{ form.accommodates(placeholder="accomodates") }}
+            {{ form.bedrooms(placeholder="bedrooms") }}
+            {{ form.beds(placeholder="beds") }}
+            {{ form.cancellation_policy(class_="dropdown") }}
+            {{ form.property_type(class_="dropdown")}}
+            {{ form.room_type(class_="dropdown")}}
+            {{ form.submit(class_="form-submit") }}
+            </fieldset>
+        </form>
+    </div>
+</div>
+</body>
+</html>
